@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <conio.h>
+
+void input(int a[15][15],int col,int row);
+void display(int a[15][15],int col,int row);
+void sumn(int a[15][15],int col,int row);
+
+int main()
+{
+	int a[15][15],row,col;
+	printf("Enter the size of row:");
+	scanf("%d",&row);
+	printf("Enter the size of col:");
+	scanf("%d",&col);
+	
+	input(a,col,row);
+	sumn(a,col,row);
+	getch();
+}
+
+void input(int a[15][15],int row,int col)
+{
+	printf("Enter the element of array:");
+	for(int i = 0; i < row; i++)
+	{
+		for(int j = 0; j < col; j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	for(int i = 0; i < row; i++)
+	{
+		for(int j = 0; j < col; j++)
+		{
+			printf("%5d",a[i][j]);
+		}
+		printf("\n");
+	}
+	return;
+}
+
+void display(int a[15][15],int row, int col)
+{
+	for(int i =0; i < row; i++)
+	{
+		for(int j = 0; j < col; j++)
+		{
+			scanf("%d\n",&a[i][j]);
+		}
+	}
+	return;
+}
+
+void sumn(int a[15][15],int row,int col)
+{
+	int sum;
+	for(int i = 0; i < row; i++)
+	{
+		sum = 0;
+		for(int j =0; j < col; j++)
+		{
+			sum  = sum + a[i][j];
+		}
+		printf("%d\n",sum);
+	}
+	return;
+}
